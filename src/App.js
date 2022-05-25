@@ -21,7 +21,10 @@ constructor() {
           <p>
             Payout {this.state.name}
           </p>
-          <button>
+          <button onClick={() => {
+              this.setState({ name: 'Scheduling for batches' });
+           }}
+          >
             Change Name
           </button>
         </header>

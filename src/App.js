@@ -4,7 +4,12 @@ import './App.css';
 
 class App extends Component {
 constructor() {
-  
+  super();
+
+
+    this.state = {
+      name: 'Schedule for batches',
+    };
 }
 
 
@@ -14,7 +19,7 @@ constructor() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Payout Schedule for batches
+            Payout {this.state.name}
           </p>
           <button>
             Change Name

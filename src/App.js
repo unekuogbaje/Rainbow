@@ -8,7 +8,8 @@ constructor() {
 
 
     this.state = {
-      name: 'Schedule for batches',
+      name: {firstLine: 'Schedule', secondLine: 'batches'},
+      company: 'Crowdyvest',
     };
 }
 
@@ -19,10 +20,15 @@ constructor() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Payout {this.state.name}
+            Payout {this.state.name.firstLine} {this.state.name.secondLine} for {this.state.company}
           </p>
           <button onClick={() => {
-              this.setState({ name: 'Scheduling for batches' });
+              this.setState(() => {
+                return {
+                  name: {firstLine: 'Crowdyvest', secondLine: 'payment backlog'},
+                }
+              }, () => {});
+              // console.log(this.state);
            }}
           >
             Change Name

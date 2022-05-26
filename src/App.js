@@ -8,31 +8,37 @@ constructor() {
   super();
 
     this.state = {
-      locations: [
-        {
-          name: 'Pretoria'
-        },
-        {
-          name: 'Ibadan'
-        },
-        {
-          name: 'Monrovia'
-        },
-        {
-          name: 'Accra'
-        },
-      ],
+      locations: [],
     };
+    console.log('constructor');
+}
+
+componentDidMount() {
+  console.log('componentDidMount');
+  fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())
+    .then((users) => 
+      this.setState(() => {
+          return {locations: users}
+        },
+        () => {
+          console.log(this.state);
+        }
+      )
+    );
 }
 
   render() {
+    console.log('render');
     return (
       <div className="App">
-        {
-          this.state.locations.map((location) => {
-            return <h1>{location.name}</h1>;
-          })
-        }
+        {this.state.locations.map((location) => {
+            return (
+              <div key={location.id}>
+                <h1>{location.name}</h1>
+              </div>
+            );
+          })}
       </div>
     );
   }

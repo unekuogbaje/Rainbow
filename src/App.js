@@ -8,7 +8,8 @@ constructor() {
   super();
 
     this.state = {
-      locations: [],
+      batches: [],
+      searchField: ''
     };
     console.log('constructor');
 }
@@ -19,7 +20,7 @@ componentDidMount() {
     .then((response) => response.json())
     .then((users) => 
       this.setState(() => {
-          return {locations: users}
+          return {batches: users}
         },
         () => {
           console.log(this.state);
@@ -28,21 +29,42 @@ componentDidMount() {
     );
 }
 
+
+onSearchChange = (event) => { 
+  const searchField = event.target.value.toLocaleLowerCase();
+  this.setState(() => {
+    return { searchField };
+  });
+};
+
   render() {
     console.log('render');
+
+    const { batches, searchField} = this.state;
+    const { onSearchChange } = this;
+
+    const filteredbatches = batches.filter((batch) => {
+      return batch.name.toLocaleLowerCase().includes(searchField);
+    });
+
     return (
       <div className="App">
-        {this.state.locations.map((location) => {
+      <input 
+        className='search-box'
+        type='search'
+        placeholder='search batches'
+        onChange={onSearchChange}
+      />
+        {filteredbatches.map((batch) => {
             return (
-              <div key={location.id}>
-                <h1>{location.name}</h1>
+              <div key={batch.id}>
+                <h1>{batch.name}</h1>
               </div>
             );
           })}
       </div>
     );
-  }
-  
+  } 
 }
 
 export default App;

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import logo from './logo.svg';
+import CardList from './components/card-list/card-list.component';
 import './App.css';
 
 class App extends Component {
@@ -55,13 +55,14 @@ onSearchChange = (event) => {
         placeholder='search batches'
         onChange={onSearchChange}
       />
-        {filteredbatches.map((batch) => {
+        {/* {filteredbatches.map((batch) => {
             return (
               <div key={batch.id}>
                 <h1>{batch.name}</h1>
               </div>
             );
-          })}
+          })} */}
+          <CardList />
       </div>
     );
   } 

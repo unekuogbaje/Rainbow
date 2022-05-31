@@ -44,8 +44,8 @@ onSearchChange = (event) => {
     return (
       <div className="App">
           <SearchBox 
-            className='search-box'
-            onChangeHandler={onSearchChange} placeholder='search batches' 
+            className='batches-search-box'
+            onChangeHandler={onSearchChange} placeholder='Search for batch name' 
           />
           <CardList batches={filteredbatches} />
       </div> 

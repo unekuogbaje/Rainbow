@@ -9,23 +9,17 @@ constructor() {
 
     this.state = {
       batches: [],
-      searchField: ''
+      searchField: '',
     };
-    console.log('constructor');
 }
 
 componentDidMount() {
-  console.log('componentDidMount');
   fetch('https://jsonplaceholder.typicode.com/users')
     .then((response) => response.json())
     .then((users) => 
       this.setState(() => {
-          return {batches: users}
-        },
-        () => {
-          console.log(this.state);
-        }
-      )
+          return { batches: users };
+        })
     );
 }
 
@@ -38,8 +32,7 @@ onSearchChange = (event) => {
 };
 
   render() {
-    console.log('render');
-
+    // console.log('render from AppJs');
     const { batches, searchField} = this.state;
     const { onSearchChange } = this;
 
@@ -49,21 +42,9 @@ onSearchChange = (event) => {
 
     return (
       <div className="App">
-      <input 
-        className='search-box'
-        type='search'
-        placeholder='search batches'
-        onChange={onSearchChange}
-      />
-        {/* {filteredbatches.map((batch) => {
-            return (
-              <div key={batch.id}>
-                <h1>{batch.name}</h1>
-              </div>
-            );
-          })} */}
-          <CardList />
-      </div>
+      
+          <CardList batches={filteredbatches} />
+      </div> 
     );
   } 
 }

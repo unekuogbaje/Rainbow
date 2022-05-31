@@ -7,10 +7,10 @@ class SearchBox extends Component {
             <input 
                 // className='search-box'
                 type='search'
-                placeholder='search batches'
+                placeholder={this.props.placeholder}
                 onChange={this.props.onChangeHandler}
              />
-        )
+        );
     }
 }
 

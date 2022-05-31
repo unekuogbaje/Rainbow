@@ -1,5 +1,6 @@
 import { Component } from 'react';
 
+import SearchBox from './components/search-box/search-box.component';
 import CardList from './components/card-list/card-list.component';
 import './App.css';
 
@@ -42,7 +43,7 @@ onSearchChange = (event) => {
 
     return (
       <div className="App">
-      
+          <SearchBox onchangeHandler={onSearchChange} placeholder='search batches' />
           <CardList batches={filteredbatches} />
       </div> 
     );

@@ -12,7 +12,11 @@ class CardList extends Component {
                     const { name, email, id } = batch;
                     return (
                     <div className='card-container' key={id}>
+                        <img 
+                            alt={`batch ${name}`}
+                            src={`https://robohash.org/&${id}/?set=set3&size=180x180`}
                         
+                        />
                         <h2>{name}</h2>
                         <p>{email}</p>
 

@@ -5,9 +5,12 @@ class CardList extends Component {
         const { batches } = this.props;
 
         return(
-            <div>
-                {batches.map(batch => (
-                    <h1 key={batch.id}>{batch.name}</h1>
+            <div className='card-list'>
+                {batches.map((batch) => (
+                    <div className='card-container' key={batch.id}>
+                        <img alt={`batch ${batch.name}`} />
+
+                    </div>
                 ))}
             </div>
         );

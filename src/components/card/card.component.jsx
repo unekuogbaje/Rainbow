@@ -4,7 +4,7 @@ class Card extends Component {
     render() {
         const {id, name, email} = this.props.batch;
         return (
-            <div className='card-container bg-[#F8F0E3] p-6 gap-16 border-2 shadow-2xl w-1/2 h-full rounded-lg cursor-pointer transform duration-200 hover:scale-110'
+            <div className='card-container bg-[#F8F0E3] p-6 gap-1 border-2 shadow-2xl w-60 h-72 rounded-lg cursor-pointer transform duration-200 hover:scale-110'
             key={id}>
                 <img 
                 alt={`batch ${name}`}

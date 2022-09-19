@@ -42,9 +42,9 @@ onSearchChange = (event) => {
     });
 
     return (
-      <div className="App bg-gradient-to-l from-pink-700 to-yellow-700 ">
-      <div className='app-title font-bold text-8xl text-[#83022d] p-2 pl-28 ml-96 italic '>
-      <h1>Pink Sea Robots</h1>
+      <div className="App bg-gradient-to-l from-pink-600 to-yellow-600 ">
+      <div className='app-title font-bold text-8xl text-[#83022d] p-2 ml-96 italic '>
+      <h1>Rainbow Robots</h1>
       </div>
           <SearchBox 
             className='batches-search-box'

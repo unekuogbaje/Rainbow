@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 import SearchBox from './components/search-box/search-box.component';
 import CardList from './components/card-list/card-list.component';
-import './App.css';
+
 
 class App extends Component {
 constructor() {
@@ -42,10 +42,13 @@ onSearchChange = (event) => {
     });
 
     return (
-      <div className="App">
+      <div className="App bg-gradient-to-l from-pink-600 to-yellow-600 ">
+      <div className='app-title font-bold text-8xl text-[#83022d] p-2 ml-96 italic '>
+      <h1>Rainbow Robots</h1>
+      </div>
           <SearchBox 
             className='batches-search-box'
-            onChangeHandler={onSearchChange} placeholder='Search robots' 
+            onChangeHandler={onSearchChange} placeholder='Search your robot' 
           />
           <CardList batches={filteredbatches} />
       </div> 

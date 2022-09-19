@@ -1,27 +1,15 @@
 import { Component } from 'react';
-
-import './card-list.styles.css';
+import Card from '../card/card.component'
 
 class CardList extends Component {
     render() {
         const { batches } = this.props;
 
         return(
-            <div className='card-list'>
+            <div className='card-list grid gap-10 grid-cols-4 p-[25px] '>
                 {batches.map((batch) => {
-                    const { name, email, id } = batch;
-                    return (
-                    <div className='card-container' key={id}>
-                        <img 
-                            alt={`batch ${name}`}
-                            src={`https://robohash.org/&${id}/?set=set3&size=180x180`}
-                        
-                        />
-                        <h2>{name}</h2>
-                        <p>{email}</p>
-
-                    </div>
-                )})}
+                    return <Card batch={batch} />;
+                })}
             </div>
         );
     }

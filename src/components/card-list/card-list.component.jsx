@@ -6,7 +6,7 @@ class CardList extends Component {
         const { batches } = this.props;
 
         return(
-            <div className='card-list grid grid-rows-3 grid-flow-col gap-4 p-[25px] '>
+            <div className='card-list grid gap-10 grid-cols-4 p-[25px] '>
                 {batches.map((batch) => {
                     return <Card batch={batch} />;
                 })}
